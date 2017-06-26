@@ -24,7 +24,6 @@ class Animation: NSObject, UIViewControllerAnimatedTransitioning {
             
         } else if let imageViewController = transitionContext.viewController(forKey: .from) as? ImageViewController {
             
-            
             dismiss(withTransitionContext: transitionContext,
                     fromViewController: imageViewController,
                     toViewController: toViewController)
@@ -35,18 +34,18 @@ class Animation: NSObject, UIViewControllerAnimatedTransitioning {
                          fromViewController: UIViewController?,
                          toViewController: ImageViewController) {
         
-        transitionContext.containerView.addSubview(toViewController.view)
-        
         toViewController.view.backgroundColor = .clear
         
+        transitionContext.containerView.addSubview(toViewController.view)
+        
+        toViewController.hideSelectedView()
+        
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-            toViewController.fullFrame()
-            
             toViewController.view.backgroundColor = .black
             
-        }) { (isFinished) in
-            transitionContext.completeTransition(true)
-        }
+            toViewController.fullFrame()
+            
+        }) { transitionContext.completeTransition($0) }
     }
     
     private func dismiss(withTransitionContext transitionContext: UIViewControllerContextTransitioning,
@@ -54,12 +53,15 @@ class Animation: NSObject, UIViewControllerAnimatedTransitioning {
                          toViewController: UIViewController?) {
     
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+            
             fromViewController.view.backgroundColor = .clear
             
             fromViewController.resetFrame()
             
-        }) { (isFinished) in
-            transitionContext.completeTransition(true)
+        }) {
+            fromViewController.resetSelectedView()
+            
+            transitionContext.completeTransition($0)
         }
     }
 }

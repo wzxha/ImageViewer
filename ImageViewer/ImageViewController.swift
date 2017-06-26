@@ -35,7 +35,6 @@ class ImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
         setUp()
     }
     
@@ -77,6 +76,8 @@ class ImageViewController: UIViewController {
             if center.y > view.bounds.height/2.0 {
                 scale = (view.bounds.height/2.0) / (center.y)
             }
+            
+            view.backgroundColor = UIColor.black.withAlphaComponent(scale)
             
             if var bounds = sender.view?.bounds {
                 bounds.size.width = view.bounds.width * scale
@@ -128,5 +129,13 @@ extension ImageViewController: UIViewControllerTransitioningDelegate {
         guard let imageView = imageView else { return }
         
         imageView.frame = view.frame
+    }
+    
+    func resetSelectedView() {
+        self.selectedView?.alpha = 1
+    }
+    
+    func hideSelectedView() {
+        self.selectedView?.alpha = 0
     }
 }
