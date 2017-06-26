@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="200" id="KGk-i7-Jjw" customClass="ImageCell" customModule="ImageViewer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYk-kk-if2">
+                        <rect key="frame" x="8" y="8" width="56" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnP-9U-Fqt">
+                        <rect key="frame" x="8" y="80" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="85h-AM-oD1"/>
+                            <constraint firstAttribute="height" constant="100" id="8OA-ml-C3U"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="image"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEt-CL-uSy">
+                        <rect key="frame" x="212" y="80" width="100" height="100"/>
+                        <state key="normal" title="Button" image="image"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spj-fp-Wsh">
+                        <rect key="frame" x="110" y="80" width="100" height="100"/>
+                        <state key="normal" title="Button" image="image"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fYk-kk-if2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="1iE-Mq-j7d"/>
+                    <constraint firstItem="UEt-CL-uSy" firstAttribute="height" secondItem="DnP-9U-Fqt" secondAttribute="height" id="Ezs-FS-EbV"/>
+                    <constraint firstItem="DnP-9U-Fqt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Itx-KY-oNa"/>
+                    <constraint firstItem="spj-fp-Wsh" firstAttribute="height" secondItem="DnP-9U-Fqt" secondAttribute="height" id="JDW-dd-yJt"/>
+                    <constraint firstItem="UEt-CL-uSy" firstAttribute="width" secondItem="DnP-9U-Fqt" secondAttribute="width" id="Kyc-Ap-ko9"/>
+                    <constraint firstItem="spj-fp-Wsh" firstAttribute="width" secondItem="DnP-9U-Fqt" secondAttribute="width" id="MQG-mo-Hbb"/>
+                    <constraint firstItem="DnP-9U-Fqt" firstAttribute="top" secondItem="fYk-kk-if2" secondAttribute="bottom" constant="48" id="V4j-Oq-IoW"/>
+                    <constraint firstItem="spj-fp-Wsh" firstAttribute="centerY" secondItem="DnP-9U-Fqt" secondAttribute="centerY" id="cY0-bH-ur6"/>
+                    <constraint firstItem="fYk-kk-if2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="lHC-Uc-34E"/>
+                    <constraint firstItem="spj-fp-Wsh" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="lJD-BA-HWL"/>
+                    <constraint firstItem="UEt-CL-uSy" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="nQb-wY-g3Q"/>
+                    <constraint firstItem="UEt-CL-uSy" firstAttribute="centerY" secondItem="DnP-9U-Fqt" secondAttribute="centerY" id="u4b-IJ-qcq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outletCollection property="imageButtons" destination="DnP-9U-Fqt" collectionClass="NSMutableArray" id="N6Y-00-gam"/>
+                <outletCollection property="imageButtons" destination="spj-fp-Wsh" collectionClass="NSMutableArray" id="wFR-7g-hgU"/>
+                <outletCollection property="imageButtons" destination="UEt-CL-uSy" collectionClass="NSMutableArray" id="EeE-t5-D9B"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="90"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="image" width="300" height="300"/>
+    </resources>
+</document>
