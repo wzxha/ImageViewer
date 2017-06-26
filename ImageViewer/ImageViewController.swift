@@ -58,6 +58,11 @@ class ImageViewController: UIViewController {
         imageView.isUserInteractionEnabled = true
         
         imageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(ImageViewController.pan(sender:))))
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ImageViewController.tap(sender:))))
+    }
+    
+    @objc fileprivate func tap(sender: UITapGestureRecognizer) {
+        dismiss(animated: true)
     }
     
     @objc fileprivate func pan(sender: UIPanGestureRecognizer) {
