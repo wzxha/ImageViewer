@@ -1,5 +1,5 @@
-# WZXImageTransitioningDemo
-点击图片跳转VC的Demo
+# ImageViewer
+图片浏览
 
 ## 效果图
-![image](https://github.com/Wzxhaha/WZXStorehouse/blob/master/WZXImageTransitioningDemo/WZXImageTransitioningDemo.gif)
+![image](https://github.com/Wzxhaha/WZXStorehouse/blob/master/ImageViewer/ImageViewer.gif)
